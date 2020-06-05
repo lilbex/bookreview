@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>title </title>
+
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}"  rel="stylesheet">
+
+
+    <link  href="{{url_for('static', filename='css/font-awesome.min.css')}}"  rel="stylesheet" type="text/css">
+
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="{{url_for('home')}}">Home</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('login')}}">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="{{url_for('register')}}">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Python Flask App</h3>
+        </div>
+	<div id="login_form" class="well">
+		<h2><center><span class="glyphicon glyphicon-lock"></span> Please Register</center></h2>
+		<hr>
+		<form  action="{{url_for('user_signup')}}" method="POST">
+		E-mail: <input type="text" name="email" class="form-control" id="inputEmail3" required>
+		Username: <input type="text" name="username" class="form-control" required>
+		<div style="height: 10px;"></div>
+		Password: <input type="password" name="password" class="form-control" required>
+		Confirm Password: <input type="password" name="password2" class="form-control" required>
+		<div style="height: 10px;"></div>
+		<button name="user_signup" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Register</button>
+		Already registered?
+		<a href="{{url_for('login')}}" ><span class="glyphicon glyphicon-log-in" ></span> Login</a>
+		</form>
+	</div>
+<div>
+
+
+</body>
+</html>
