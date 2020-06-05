@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>title </title>
+
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}"  rel="stylesheet">
+
+
+    <link  href="{{url_for('static', filename='css/font-awesome.min.css')}}"  rel="stylesheet" type="text/css">
+</head>
+ 
+<body>
+    <nav class="nav bg-secondary">
+    <div class="col-lg-8">
+      <a class="nav-link active" href="#">Active</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link disabled" href="#">Disabled</a>
+      </div>
+      <div class="col-lg-4">
+      <form action="{{url_for('submit')}}" method="POST">
+          <input type="text" name="username"  id="inputEmail3" required>
+          <input type="password" name="password"  required>
+          <button name="submit" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+      </form>
+      </div>
+    </nav>
+        <header>
+        <div style="background-image: url({{url_for('static', filename='img/header2.jpg')}}); height: 300px; width: 100%; background-repeat: no-repeat;"  >
+            <div class="col-lg-9">HERE</div>
+            <div class="col-lg-3">
+            <form  action="{{url_for('user_signup')}}" method="POST">
+                E-mail: <input type="text" name="email" class="form-control" id="inputEmail3" required>
+                Username: <input type="text" name="username" class="form-control" required>
+                <div style="height: 10px;"></div>
+                Password: <input type="password" name="password" class="form-control" required>
+                Confirm Password: <input type="password" name="password2" class="form-control" required>
+                <div style="height: 10px;"></div>
+                <button name="user_signup" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Register</button>
+                Already registered?
+                <a href="{{url_for('login')}}" ><span class="glyphicon glyphicon-log-in" ></span> Login</a>
+        </form>
+        </div>
+
+           
+
+        </div>    
+    </header>
+
+    <!--<section class="jumbotron">
+    <div class="container">
+        {% for book in books %}
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>S/N</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN No</th>
+                    <th>Reviews</th>
+                </tr>
+                
+                <tr>
+                    <td>{{ book.id}}</td>
+                    <td>{{ book.title}}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.isbn }}</td>
+                    <td><a href="{{url_for('review', book_id=book.id, title=book.title)}}">Reviews</a></td>
+                </tr>
+            </table>
+            {% endfor %}  
+        </div>
+    </section>-->
+    
+    <section class="jumbotron">
+        <div class="container">
+            <div class="col-lg-8">
+                <div class="col-lg-3">
+                    <div  style="width: 10em; height: 40em;">
+                    <img src="{{url_for('static', filename='img/header.jpg')}}" style=" width: inherit; padding: 1em;">
+                    <p>some wwrite ups here will be helpful, this is suppose to be the card body.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div  style="width: 10em; height: 40em;">
+                    <img src="{{url_for('static', filename='img/header.jpg')}}" style=" width: inherit;">
+                    <p>some wwrite ups here will be helpful, this is suppose to be the card body.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div  style="width: 10em; height: 40em;">
+                    <img src="{{url_for('static', filename='img/header.jpg')}}" style=" width: inherit;">
+                    <p>some wwrite ups here will be helpful, this is suppose to be the card body.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div  style="width: 10em; height: 40em;">
+                    <img src="{{url_for('static', filename='img/header.jpg')}}" style=" width: inherit;">
+                    <p>some wwrite ups here will be helpful, this is suppose to be the card body.</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-lg-4">
+                Here is the content, is it what i said the you are thinking about
+            </div>
+         </div>
+    </section>
+            
+            
+
+
+
+    <footer class="footer">
+        <p>&copy; Company 2015</p>
+    </footer>
+ 
+
+</body>
+ 
+</html>

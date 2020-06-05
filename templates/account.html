@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Book-register</title>
+
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}"  rel="stylesheet">
+
+
+    <link  href="{{url_for('static', filename='css/font-awesome.min.css')}}"  rel="stylesheet" type="text/css">
+   
+
+</head>
+ 
+<body style="background-color: lightgreen;">
+                     
+
+                <nav class="nav" style="background-color: green;">
+                <ul class="nav nav-pills pull-right">
+                    <span style="color: black;"><li role="presentation"> You are logged in as {{ u_username }} | <a href="#" style="color: black;">Log out </a></li></span>
+                </ul>
+                <form action="{{url_for('submit_search')}}" method="GET">
+                    <input type="text" name="search_words"  placeholder="search">
+                    <button name="submit_search"  type="submit">search</button>
+                </form>
+                 {% for books in each_book %}
+                 <ul>
+                    <li><a href="{{url_for('review', book_id=books.id, isbn=books.isbn)}}">{{ books.title}} by {{ books.author}}</a></li>
+                 </ul> 
+                 {% endfor %}
+            </nav>
+          
+        
+
+
+        <div class="row marketing">
+            <div class="col-lg-6">
+				Read to review any of the book
+			
+				{% for book in books %}
+                <table class="table table-bordered table-striped">
+                   <p><a href="{{url_for('review_form', book_id=book.id, book_title=book.title)}}">{{ book.title}} by {{ book.author }} </a></p> 
+                  
+                 {% endfor %}  
+				
+            <div class="col-lg-6">
+				555yugygyhghjg
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
